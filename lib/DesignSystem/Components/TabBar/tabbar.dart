@@ -7,7 +7,8 @@ class CustomTabBar extends StatefulWidget {
 
   const CustomTabBar._(this.viewModel, this.onTabSelected);
 
-  static Widget instantiate(TabBarViewModel viewModel, Function(int) onTabSelected) {
+  static Widget instantiate(
+      TabBarViewModel viewModel, Function(int) onTabSelected) {
     return CustomTabBar._(viewModel, onTabSelected);
   }
 
@@ -31,23 +32,31 @@ class _CustomTabBarState extends State<CustomTabBar> {
             });
             widget.onTabSelected(index);
           },
-          child: Container(
-            width: MediaQuery.of(context).size.width / widget.viewModel.tabTitles.length, // Divide a largura disponível entre as abas
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width /
+                widget.viewModel.tabTitles
+                    .length, // Divide a largura disponível entre as abas
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   widget.viewModel.tabTitles[index],
-                  textAlign: TextAlign.center, // Centraliza o texto horizontalmente
+                  textAlign:
+                      TextAlign.center, // Centraliza o texto horizontalmente
                   style: TextStyle(
                     color: isSelected ? Color(0xFFF8D247) : Colors.white,
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                    fontWeight:
+                        isSelected ? FontWeight.bold : FontWeight.normal,
                   ),
                 ),
                 Container(
-                  height: 4, // Mantém a altura da linha sempre, independente de estar selecionada ou não
-                  width: double.infinity, // Ocupa toda a largura do espaço da aba
-                  color: isSelected ? Color(0xFFF8D247) : Colors.transparent, // Cor ou transparente
+                  height:
+                      4, // Mantém a altura da linha sempre, independente de estar selecionada ou não
+                  width:
+                      double.infinity, // Ocupa toda a largura do espaço da aba
+                  color: isSelected
+                      ? Color(0xFFF8D247)
+                      : Colors.transparent, // Cor ou transparente
                 ),
               ],
             ),
