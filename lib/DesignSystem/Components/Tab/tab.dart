@@ -49,8 +49,8 @@ class _TabComponentState extends State<TabComponent>
         TabBar(
           controller: tabController,
           tabs: widget.tabViewModel.tabs,
-          indicatorColor: lightPrimaryBrandColor,
-          labelColor: lightPrimaryBrandColor,
+          indicatorColor: normalSecondaryBrandColor,
+          labelColor: normalSecondaryBrandColor,
           unselectedLabelColor: Colors.grey,
         ),
       ],
