@@ -30,7 +30,7 @@ class _BottomTabBarPageState extends State<BottomTabBarPage> {
         viewModel: BottomTabBarViewModel(
           bottomTabs: [
             const BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.star_border),
               label: "Home",
             ),
             const BottomNavigationBarItem(
@@ -38,7 +38,7 @@ class _BottomTabBarPageState extends State<BottomTabBarPage> {
               label: "Messages",
             ),
             const BottomNavigationBarItem(
-              icon: Icon(Icons.label),
+              icon: Icon(Icons.star_border),
               label: "Label",
             ),
             const BottomNavigationBarItem(

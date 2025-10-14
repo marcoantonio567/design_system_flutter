@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import '../../shared/colors.dart';
 import 'bottom_tab_bar_view_model.dart';
 
-
 class BottomTabBar extends StatelessWidget {
   final BottomTabBarViewModel viewModel;
   final int currentIndex;
 
-  const BottomTabBar._({super.key, required this.viewModel, required this.currentIndex});
+  const BottomTabBar._(
+      {super.key, required this.viewModel, required this.currentIndex});
 
-  static Widget instantiate({Key? key, required BottomTabBarViewModel viewModel, required int currentIndex}) {
-    return BottomTabBar._(key: key, viewModel: viewModel, currentIndex: currentIndex);
+  static Widget instantiate(
+      {Key? key,
+      required BottomTabBarViewModel viewModel,
+      required int currentIndex}) {
+    return BottomTabBar._(
+        key: key, viewModel: viewModel, currentIndex: currentIndex);
   }
 
   @override
@@ -18,7 +22,7 @@ class BottomTabBar extends StatelessWidget {
     return BottomNavigationBar(
       items: viewModel.bottomTabs,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: darkPrimaryBrandColor,
+      selectedItemColor: normalSecondaryBrandColor,
       unselectedItemColor: lightPrimaryBaseColorLight,
       showUnselectedLabels: true,
       currentIndex: currentIndex,
