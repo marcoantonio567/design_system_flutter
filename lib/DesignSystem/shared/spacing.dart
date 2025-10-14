@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Radius tokens
+const double radiusXs = 4.0;
 const double radiusSm = 8.0;
 
 // Border width tokens

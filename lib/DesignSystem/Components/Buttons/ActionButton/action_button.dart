@@ -25,6 +25,7 @@ class ActionButton extends StatelessWidget {
     Color contentColor = lightTertiaryBaseColorLight;
     BorderSide? borderSide;
     double? elevation;
+    double borderRadius = radiusSm; // Default radius
 
     switch (viewModel.size) {
       case ActionButtonSize.large:
@@ -37,11 +38,17 @@ class ActionButton extends StatelessWidget {
       case ActionButtonSize.medium:
         buttonTextStyle = button2Semibold;
         iconSize = 24;
+        horizontalPadding = 16;
+        verticalPadding = 12;
+        minSize = const Size(142, 40);
         break;
       case ActionButtonSize.small:
         buttonTextStyle = button3Semibold;
-        horizontalPadding = 16;
+        horizontalPadding = 12;
+        verticalPadding = 8;
         iconSize = 16;
+        minSize = const Size(127, 32);
+        borderRadius = radiusXs;
         break;
     }
 
@@ -83,7 +90,7 @@ class ActionButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(radiusSm)),
+              borderRadius: BorderRadius.circular(borderRadius)),
           textStyle: buttonTextStyle.copyWith(color: contentColor),
           foregroundColor: contentColor,
           minimumSize: minSize,
