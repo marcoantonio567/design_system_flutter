@@ -28,6 +28,8 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.large,
                         style: ActionButtonStyle.primary,
                         text: 'Large',
+                        leftIcon: Icons.navigate_before,
+                        rightIcon: Icons.navigate_next,
                         onPressed: () {}
                       )
                     ),
@@ -58,7 +60,8 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.large,
                         style: ActionButtonStyle.secondary,
                         text: 'Large',
-                        icon: Icons.navigate_next_outlined,
+                        leftIcon: Icons.navigate_before,
+                        rightIcon: Icons.navigate_next_outlined,
                         onPressed: () {}
                       )
                     ),
@@ -68,7 +71,7 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.medium,
                         style: ActionButtonStyle.secondary,
                         text: 'Medium',
-                        icon: Icons.navigate_next_outlined,
+                        rightIcon: Icons.navigate_next_outlined,
                         onPressed: () {}
                       )
                     ),
@@ -78,7 +81,7 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.small,
                         style: ActionButtonStyle.secondary,
                         text: 'Small',
-                        icon: Icons.navigate_next_outlined,
+                        rightIcon: Icons.navigate_next_outlined,
                         onPressed: () {}
                       )
                     ),
@@ -91,6 +94,8 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.large,
                         style: ActionButtonStyle.tertiary,
                         text: 'Large',
+                        leftIcon: Icons.navigate_before,
+                        rightIcon: Icons.navigate_next_outlined,
                         onPressed: () {}
                       )
                     ),
@@ -100,7 +105,7 @@ class ActionButtonPage extends StatelessWidget {
                         size: ActionButtonSize.medium,
                         style: ActionButtonStyle.tertiary,
                         text: 'Medium',
-                        icon: Icons.navigate_next_outlined,
+                        rightIcon: Icons.navigate_next_outlined,
                         onPressed: () {}
                       )
                     ),
@@ -109,7 +114,7 @@ class ActionButtonPage extends StatelessWidget {
                       ActionButtonViewModel(
                         size: ActionButtonSize.small,
                         style: ActionButtonStyle.tertiary,
-                        icon: Icons.navigate_next_outlined,
+                        rightIcon: Icons.navigate_next_outlined,
                         text: 'Small',
                         onPressed: () {}
                       )

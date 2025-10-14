@@ -14,6 +14,10 @@ const Color lightSecondaryBrandColor = Color(0xff6482FF);
 const Color normalSecondaryBrandColor = Color(0xff274FF5);
 const Color darkSecondaryBrandColor = Color(0xff1A38B2);
 
+// DS specific overrides
+// Figma: Primary Filled Button background
+const Color dsPrimaryFilledButtonColor = Color(0xFF4E61F6);
+
 const Color lightTertiaryBrandColor = Color(0xffFF9D7E);
 const Color normalTertiaryBrandColor = Color(0xffF87147);
 const Color darkTertiaryBrandColor = Color(0xffE75527);
