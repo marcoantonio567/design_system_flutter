@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                         'Custom Cards',
                         'Cards personalizáveis e reutilizáveis',
                         Icons.credit_card,
-                        CardSamplePage(),
+                        CardSampleScreen(),
                       ),
                       const SizedBox(height: spaceMd),
                       _buildNavigationCard(
