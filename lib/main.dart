@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'DesignSystem/Samples/actionButtonSampleScreen/action_button_sample_screen.dart';
 import 'DesignSystem/Samples/bottomTabBarSampleScreen/bottom_tab_bar_sample_screen.dart';
+import 'DesignSystem/Samples/cardSampleScreen/card_sample_screen.dart';
 import 'DesignSystem/Samples/inputFieldSampleScreen/input_field_sample_screen.dart';
 import 'DesignSystem/Samples/linkedLabelSampleScreen/linked_label_sample_screen.dart';
 import 'DesignSystem/Samples/tabComponentSampleScreen/tab_sample_screen.dart';
@@ -108,6 +109,14 @@ class HomeScreen extends StatelessWidget {
                         'Barra de navegação inferior',
                         Icons.tab,
                         BottomTabBarPage(),
+                      ),
+                      const SizedBox(height: spaceMd),
+                      _buildNavigationCard(
+                        context,
+                        'Custom Cards',
+                        'Cards personalizáveis e reutilizáveis',
+                        Icons.credit_card,
+                        CardSamplePage(),
                       ),
                       const SizedBox(height: spaceMd),
                       _buildNavigationCard(
