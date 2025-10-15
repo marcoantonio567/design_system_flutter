@@ -84,12 +84,12 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: spaceXs),
                 Text(
-                   'Navegue pelos exemplos do Design System',
-                   style: paragraph1Regular.copyWith(
-                     color: lightTertiaryBaseColorLight.withValues(alpha: 0.8),
-                   ),
-                   textAlign: TextAlign.center,
-                 ),
+                  'Navegue pelos exemplos do Design System',
+                  style: paragraph1Regular.copyWith(
+                    color: lightTertiaryBaseColorLight.withValues(alpha: 0.8),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: space2xl),
                 Expanded(
                   child: ListView(
@@ -166,9 +166,9 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(spaceSm),
                 decoration: BoxDecoration(
-                   color: normalSecondaryBrandColor.withValues(alpha: 0.1),
-                   borderRadius: BorderRadius.circular(radiusSm),
-                 ),
+                  color: normalSecondaryBrandColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(radiusSm),
+                ),
                 child: Icon(
                   icon,
                   color: normalSecondaryBrandColor,
@@ -212,7 +212,8 @@ class Scene1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SceneWidget(
       title: 'Scene 1',
-      message: 'Esta é uma demonstração do componente SceneWidget reutilizável.',
+      message:
+          'Esta é uma demonstração do componente SceneWidget reutilizável.',
     );
   }
 }
