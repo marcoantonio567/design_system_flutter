@@ -5,6 +5,7 @@ import 'DesignSystem/Samples/cardSampleScreen/card_sample_screen.dart';
 import 'DesignSystem/Samples/inputFieldSampleScreen/input_field_sample_screen.dart';
 import 'DesignSystem/Samples/linkedLabelSampleScreen/linked_label_sample_screen.dart';
 import 'DesignSystem/Samples/listSampleScreen/list_sample_screen.dart';
+import 'DesignSystem/Samples/bannerSampleScreen/banner_sample_screen.dart';
 import 'DesignSystem/Samples/tabComponentSampleScreen/tab_sample_screen.dart';
 import 'DesignSystem/shared/colors.dart';
 import 'DesignSystem/shared/styles.dart';
@@ -142,6 +143,14 @@ class HomeScreen extends StatelessWidget {
                         'Listas personalizáveis e reutilizáveis',
                         Icons.list,
                         ListSampleScreen(),
+                      ),
+                      const SizedBox(height: spaceMd),
+                      _buildNavigationCard(
+                        context,
+                        'Custom Banner',
+                        'Banners informativos e promocionais',
+                        Icons.campaign,
+                        BannerSampleScreen(),
                       ),
                       const SizedBox(height: spaceMd),
                       _buildNavigationCard(
