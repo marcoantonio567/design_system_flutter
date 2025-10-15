@@ -28,6 +28,7 @@ class InputFieldPage extends StatelessWidget {
                 controller: controller1,
                 placeholder: 'Label',
                 password: false,
+                prefixIcon: const Icon(Icons.star_border),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Esse campo é obrigatório';
@@ -44,6 +45,7 @@ class InputFieldPage extends StatelessWidget {
                 controller: passwordController1,
                 placeholder: 'Label',
                 password: true,
+                prefixIcon: const Icon(Icons.star_border),
                 suffixIcon: const Icon(Icons.remove_red_eye),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -61,6 +63,7 @@ class InputFieldPage extends StatelessWidget {
                 controller: controller2,
                 placeholder: 'Label',
                 password: false,
+                prefixIcon: const Icon(Icons.star_border),
                 isEnabled: false,
               ),
             ),
@@ -70,6 +73,7 @@ class InputFieldPage extends StatelessWidget {
                 controller: passwordController2,
                 placeholder: 'Label',
                 password: false,
+                prefixIcon: const Icon(Icons.star_border),
                 isEnabled: false,
                 suffixIcon: const Icon(Icons.remove_red_eye)
               ),

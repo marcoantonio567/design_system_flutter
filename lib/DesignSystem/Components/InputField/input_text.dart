@@ -49,6 +49,7 @@ class StyledInputFieldState extends State<StyledInputField> {
     InputDecoration decoration = InputDecoration(
       contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       filled: true,
+      prefixIcon: widget.viewModel.prefixIcon,
       suffixIcon: widget.viewModel.password
           ? IconButton(
               icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
@@ -60,23 +61,23 @@ class StyledInputFieldState extends State<StyledInputField> {
       labelStyle: const TextStyle(color: Colors.black),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: const BorderSide(color: Colors.black),
+        borderSide: const BorderSide(color: Colors.black, width: 1.5),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: const BorderSide(color: Colors.red),
+        borderSide: const BorderSide(color: Colors.red, width: 1.5),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: const BorderSide(color: Colors.black),
+        borderSide: const BorderSide(color: Color(0xFF4E61F6), width: 1.5),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: const BorderSide(color: Colors.black),
+        borderSide: const BorderSide(color: Colors.black, width: 1.5),
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: const BorderSide(color: Colors.grey),
+        borderSide: const BorderSide(color: Colors.grey, width: 1.5),
       ),
       errorText: errorMsg,
     );
