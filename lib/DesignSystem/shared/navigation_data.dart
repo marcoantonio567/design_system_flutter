@@ -9,6 +9,7 @@ import '../Samples/bannerSampleScreen/banner_sample_screen.dart';
 import '../Samples/tabComponentSampleScreen/tab_sample_screen.dart';
 import '../Components/NotificationInput/notification_sample_screen.dart';
 import '../Samples/avatarSampleScreen/avatar_sample_screen.dart';
+import '../Samples/sceneSamples/scene_samples.dart';
 
 class NavigationItem {
   final String title;
@@ -85,6 +86,18 @@ class NavigationData {
       description: 'Avatares personalizáveis para perfis de usuário',
       icon: Icons.account_circle,
       destination: AvatarSampleScreen(),
+    ),
+    NavigationItem(
+      title: 'Interactive Card',
+      description: 'Card interativo com ações e design consistente',
+      icon: Icons.star,
+      destination: Scene6(),
+    ),
+    NavigationItem(
+      title: 'Interactive List',
+      description: 'Lista interativa com ações e menu contextual',
+      icon: Icons.list_alt,
+      destination: Scene7(),
     ),
   ];
 }
