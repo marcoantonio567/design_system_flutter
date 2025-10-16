@@ -12,6 +12,7 @@ import '../Samples/avatarSampleScreen/avatar_sample_screen.dart';
 import '../Samples/sceneSamples/scene_samples.dart';
 import '../Samples/checkboxSampleScreen/checkbox_sample_screen.dart';
 import '../Samples/radioSampleScreen/radio_sample_screen.dart';
+import '../Samples/dropdownSampleScreen/dropdown_sample_screen.dart';
 
 class NavigationItem {
   final String title;
@@ -112,6 +113,12 @@ class NavigationData {
       description: 'Componentes de radio button personalizáveis',
       icon: Icons.radio_button_checked,
       destination: RadioSampleScreen(),
+    ),
+    NavigationItem(
+      title: 'Dropdown Component',
+      description: 'Componentes de dropdown personalizáveis',
+      icon: Icons.arrow_drop_down_circle,
+      destination: DropdownSampleScreen(),
     ),
   ];
 }

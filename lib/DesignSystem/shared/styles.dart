@@ -83,6 +83,14 @@ const TextStyle paragraph2Medium = TextStyle(
   letterSpacing: 0.25
 );
 
+const TextStyle paragraph2Regular = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 13,
+  fontWeight: FontWeight.w400,
+  color: normalPrimaryBaseColorLight,
+  letterSpacing: 0.25
+);
+
 const TextStyle label1Semibold = TextStyle(
   fontFamily: 'Inter',
   fontSize: 15,
