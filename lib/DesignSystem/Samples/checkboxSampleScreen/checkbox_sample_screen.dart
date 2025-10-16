@@ -5,7 +5,7 @@ import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
 
 class CheckboxSampleScreen extends StatefulWidget {
-  const CheckboxSampleScreen({Key? key}) : super(key: key);
+  const CheckboxSampleScreen({super.key});
 
   @override
   State<CheckboxSampleScreen> createState() => _CheckboxSampleScreenState();
@@ -78,7 +78,7 @@ class _CheckboxSampleScreenState extends State<CheckboxSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -126,7 +126,7 @@ class _CheckboxSampleScreenState extends State<CheckboxSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -166,7 +166,7 @@ class _CheckboxSampleScreenState extends State<CheckboxSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -202,7 +202,7 @@ class _CheckboxSampleScreenState extends State<CheckboxSampleScreen> {
                 style: CheckboxStyle.primary,
               ),
             );
-          }).toList(),
+          }),
           const SizedBox(height: spaceMd),
           if (selectedOptions.isNotEmpty) ...[
             const Divider(),

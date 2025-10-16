@@ -10,13 +10,13 @@ class CustomCheckbox extends StatefulWidget {
   final CheckboxStyle style;
 
   const CustomCheckbox({
-    Key? key,
+    super.key,
     required this.value,
     this.onChanged,
     this.label,
     this.enabled = true,
     this.style = CheckboxStyle.primary,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomCheckbox> createState() => _CustomCheckboxState();

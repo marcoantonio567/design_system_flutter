@@ -5,7 +5,7 @@ import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
 
 class RadioSampleScreen extends StatefulWidget {
-  const RadioSampleScreen({Key? key}) : super(key: key);
+  const RadioSampleScreen({super.key});
 
   @override
   State<RadioSampleScreen> createState() => _RadioSampleScreenState();
@@ -78,7 +78,7 @@ class _RadioSampleScreenState extends State<RadioSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -130,7 +130,7 @@ class _RadioSampleScreenState extends State<RadioSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -166,7 +166,7 @@ class _RadioSampleScreenState extends State<RadioSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -207,7 +207,7 @@ class _RadioSampleScreenState extends State<RadioSampleScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -243,10 +243,10 @@ class _RadioSampleScreenState extends State<RadioSampleScreen> {
             Container(
               padding: const EdgeInsets.all(spaceSm),
               decoration: BoxDecoration(
-                color: lightSuccessSystemColor.withOpacity(0.1),
+                color: lightSuccessSystemColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: normalSuccessSystemColor.withOpacity(0.3),
+                  color: normalSuccessSystemColor.withValues(alpha: 0.3),
                 ),
               ),
               child: Row(

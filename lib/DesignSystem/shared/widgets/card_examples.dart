@@ -180,7 +180,7 @@ class CardSpecialExamples extends StatelessWidget {
                   vertical: spaceXs,
                 ),
                 decoration: BoxDecoration(
-                  color: normalSuccessSystemColor.withOpacity(0.1),
+                  color: normalSuccessSystemColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(radiusXs),
                 ),
                 child: Text(

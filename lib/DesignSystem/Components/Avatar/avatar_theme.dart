@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../shared/colors.dart';
-import '../../shared/spacing.dart';
 import '../../shared/styles.dart';
 import 'avatar_config.dart';
 

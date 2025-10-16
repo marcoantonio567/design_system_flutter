@@ -168,7 +168,7 @@ class Scene7 extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
+              backgroundColor: Theme.of(context).primaryColor.withValues(alpha: 0.1),
               child: Icon(
                 item['icon'] as IconData,
                 color: Theme.of(context).primaryColor,

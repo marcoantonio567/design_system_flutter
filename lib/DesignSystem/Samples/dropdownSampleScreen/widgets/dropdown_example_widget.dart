@@ -10,11 +10,11 @@ class DropdownExampleWidget extends StatelessWidget {
   final DropdownViewModel<String> viewModel;
 
   const DropdownExampleWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.viewModel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

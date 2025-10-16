@@ -11,14 +11,14 @@ class CustomRadio<T> extends StatefulWidget {
   final RadioStyle style;
 
   const CustomRadio({
-    Key? key,
+    super.key,
     required this.value,
     required this.groupValue,
     this.onChanged,
     this.label,
     this.enabled = true,
     this.style = RadioStyle.primary,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomRadio<T>> createState() => _CustomRadioState<T>();
@@ -66,8 +66,6 @@ class _CustomRadioState<T> extends State<CustomRadio<T>>
     _animationController.dispose();
     super.dispose();
   }
-
-  bool get _isSelected => widget.value == widget.groupValue;
 
   Color get _getRadioColor {
     if (!widget.enabled) {
@@ -158,14 +156,14 @@ class CustomRadioGroup<T> extends StatelessWidget {
   final Axis direction;
 
   const CustomRadioGroup({
-    Key? key,
+    super.key,
     required this.options,
     this.groupValue,
     this.onChanged,
     this.style = RadioStyle.primary,
     this.enabled = true,
     this.direction = Axis.vertical,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

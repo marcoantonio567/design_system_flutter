@@ -6,6 +6,17 @@ Um sistema de design completo e reutilizável para Flutter, criado para acelerar
 
 Este projeto é um **Design System** desenvolvido em Flutter que oferece um conjunto abrangente de componentes UI reutilizáveis. O objetivo é permitir que desenvolvedores criem aplicações completas utilizando apenas esses componentes pré-construídos, garantindo consistência visual e funcional em todos os projetos.
 
+## 🤖 Desenvolvido com Context7
+
+Este projeto foi desenvolvido utilizando o **Context7**, uma ferramenta avançada de IA que oferece:
+
+- **Documentação Inteligente**: Acesso a documentação atualizada de bibliotecas e frameworks
+- **Assistência de Código**: Suporte inteligente para desenvolvimento Flutter
+- **Melhores Práticas**: Implementação seguindo as diretrizes mais recentes do Flutter
+- **Otimização Automática**: Correções e melhorias de código automatizadas
+
+O Context7 foi fundamental para garantir que este design system siga as melhores práticas do Flutter e mantenha compatibilidade com as versões mais recentes do framework.
+
 ## 🏗️ Arquitetura do Código
 
 O projeto segue uma arquitetura modular e bem organizada:
@@ -173,4 +184,4 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 
 ---
 
-**Desenvolvido com 😡☕ usando Flutter**
+**Desenvolvido com 😡☕ usando Flutter e Context7**

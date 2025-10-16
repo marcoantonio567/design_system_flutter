@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'banner_theme.dart';
 import 'custom_banner.dart';
 
 class BannerConfig {

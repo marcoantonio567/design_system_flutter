@@ -3,7 +3,6 @@ import '../../Components/List/custom_list.dart';
 import '../../shared/colors.dart';
 import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
-import '../../shared/scene_widget.dart';
 
 class ListSampleScreen extends StatelessWidget {
   const ListSampleScreen({super.key});
