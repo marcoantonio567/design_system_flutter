@@ -10,6 +10,8 @@ import '../Samples/tabComponentSampleScreen/tab_sample_screen.dart';
 import '../Components/NotificationInput/notification_sample_screen.dart';
 import '../Samples/avatarSampleScreen/avatar_sample_screen.dart';
 import '../Samples/sceneSamples/scene_samples.dart';
+import '../Samples/checkboxSampleScreen/checkbox_sample_screen.dart';
+import '../Samples/radioSampleScreen/radio_sample_screen.dart';
 
 class NavigationItem {
   final String title;
@@ -98,6 +100,18 @@ class NavigationData {
       description: 'Lista interativa com ações e menu contextual',
       icon: Icons.list_alt,
       destination: Scene7(),
+    ),
+    NavigationItem(
+      title: 'Checkbox Component',
+      description: 'Componentes de checkbox personalizáveis',
+      icon: Icons.check_box,
+      destination: CheckboxSampleScreen(),
+    ),
+    NavigationItem(
+      title: 'Radio Component',
+      description: 'Componentes de radio button personalizáveis',
+      icon: Icons.radio_button_checked,
+      destination: RadioSampleScreen(),
     ),
   ];
 }
