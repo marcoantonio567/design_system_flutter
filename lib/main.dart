@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'DesignSystem/shared/theme.dart';
-import 'DesignSystem/shared/colors.dart';
+import 'DesignSystem/shared/colors.dart'; // Importação individual
+
+// Ou usar o index para importar múltiplos widgets
+import 'DesignSystem/shared/widgets/index.dart';
 import 'DesignSystem/shared/styles.dart';
 import 'DesignSystem/shared/spacing.dart';
 import 'DesignSystem/shared/navigation_data.dart';
@@ -78,7 +81,8 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: ListView.separated(
                     itemCount: NavigationData.items.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: spaceMd),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: spaceMd),
                     itemBuilder: (context, index) {
                       final item = NavigationData.items[index];
                       return NavigationCard(

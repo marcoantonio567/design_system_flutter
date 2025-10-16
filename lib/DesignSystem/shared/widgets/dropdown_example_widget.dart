@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../custom_dropdown.dart';
-import '../dropdown_view_model.dart';
-import '../../../Styles/styles.dart';
+import '../../Components/Dropdown/custom_dropdown.dart';
+import '../../Components/Dropdown/dropdown_view_model.dart';
+import '../styles.dart';
 
 class DropdownExampleWidget extends StatelessWidget {
   final String title;
   final String description;
-  final DropdownViewModel viewModel;
+  final DropdownViewModel<String> viewModel;
 
   const DropdownExampleWidget({
     Key? key,
@@ -30,7 +30,7 @@ class DropdownExampleWidget extends StatelessWidget {
           style: paragraph2Regular,
         ),
         const SizedBox(height: 16),
-        CustomDropdown<String>(
+        CustomDropdown.instantiate<String>(
           viewModel: viewModel,
         ),
         const SizedBox(height: 32),

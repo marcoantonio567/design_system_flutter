@@ -3,7 +3,7 @@ import '../../shared/colors.dart';
 import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
 import '../../Components/Dropdown/dropdown_view_model.dart';
-import 'widgets/dropdown_example_widget.dart';
+import '../../shared/widgets/dropdown_example_widget.dart';
 
 class DropdownSampleScreen extends StatefulWidget {
   const DropdownSampleScreen({super.key});

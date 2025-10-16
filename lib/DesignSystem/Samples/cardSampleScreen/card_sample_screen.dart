@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../shared/colors.dart';
 import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
-import 'widgets/section_title.dart';
-import 'widgets/card_examples.dart';
+import '../../shared/widgets/section_title.dart';
+import '../../shared/widgets/card_examples.dart';
 
 class CardSampleScreen extends StatelessWidget {
   const CardSampleScreen({super.key});
