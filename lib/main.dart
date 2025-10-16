@@ -8,6 +8,7 @@ import 'DesignSystem/Samples/listSampleScreen/list_sample_screen.dart';
 import 'DesignSystem/Samples/bannerSampleScreen/banner_sample_screen.dart';
 import 'DesignSystem/Samples/tabComponentSampleScreen/tab_sample_screen.dart';
 import 'DesignSystem/Components/NotificationInput/notification_sample_screen.dart';
+import 'DesignSystem/Samples/avatarSampleScreen/avatar_sample_screen.dart';
 import 'DesignSystem/shared/colors.dart';
 import 'DesignSystem/shared/styles.dart';
 import 'DesignSystem/shared/spacing.dart';
@@ -168,6 +169,14 @@ class HomeScreen extends StatelessWidget {
                         'Configurações de notificações personalizáveis',
                         Icons.notifications_outlined,
                         NotificationSampleScreen(),
+                      ),
+                      const SizedBox(height: spaceMd),
+                      _buildNavigationCard(
+                        context,
+                        'Avatar Component',
+                        'Avatares personalizáveis para perfis de usuário',
+                        Icons.account_circle,
+                        AvatarSampleScreen(),
                       ),
                     ],
                   ),
