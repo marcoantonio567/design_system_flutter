@@ -7,7 +7,7 @@ import '../Samples/linkedLabelSampleScreen/linked_label_sample_screen.dart';
 import '../Samples/listSampleScreen/list_sample_screen.dart';
 import '../Samples/bannerSampleScreen/banner_sample_screen.dart';
 import '../Samples/tabComponentSampleScreen/tab_sample_screen.dart';
-import '../Components/NotificationInput/notification_sample_screen.dart';
+import '../Samples/notificationInputSampleScreen/notification_sample_screen.dart';
 import '../Samples/avatarSampleScreen/avatar_sample_screen.dart';
 import '../Samples/sceneSamples/scene_samples.dart';
 import '../Samples/checkboxSampleScreen/checkbox_sample_screen.dart';
