@@ -30,95 +30,89 @@ class NavigationItem {
 
 class NavigationData {
   static List<NavigationItem> get items => [
-    NavigationItem(
-      title: 'Action Button',
-      description: 'Botões de ação personalizados',
-      icon: Icons.touch_app,
-      destination: ActionButtonPage(),
-    ),
-    NavigationItem(
-      title: 'Bottom Tab Bar',
-      description: 'Barra de navegação inferior',
-      icon: Icons.tab,
-      destination: BottomTabBarPage(),
-    ),
-    NavigationItem(
-      title: 'Custom Cards',
-      description: 'Cards personalizáveis e reutilizáveis',
-      icon: Icons.credit_card,
-      destination: CardSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Input Text Field',
-      description: 'Campos de entrada de texto',
-      icon: Icons.text_fields,
-      destination: InputFieldPage(),
-    ),
-    NavigationItem(
-      title: 'Linked Label',
-      description: 'Labels com links interativos',
-      icon: Icons.link,
-      destination: LinkedLabelPage(),
-    ),
-    NavigationItem(
-      title: 'Custom List',
-      description: 'Listas personalizáveis e reutilizáveis',
-      icon: Icons.list,
-      destination: ListSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Custom Banner',
-      description: 'Banners informativos e promocionais',
-      icon: Icons.campaign,
-      destination: BannerSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Tab Bar',
-      description: 'Componente de abas',
-      icon: Icons.tab_unselected,
-      destination: TabPage(),
-    ),
-    NavigationItem(
-      title: 'Notification Input',
-      description: 'Configurações de notificações personalizáveis',
-      icon: Icons.notifications_outlined,
-      destination: NotificationSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Avatar Component',
-      description: 'Avatares personalizáveis para perfis de usuário',
-      icon: Icons.account_circle,
-      destination: AvatarSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Interactive Card',
-      description: 'Card interativo com ações e design consistente',
-      icon: Icons.star,
-      destination: Scene6(),
-    ),
-    NavigationItem(
-      title: 'Interactive List',
-      description: 'Lista interativa com ações e menu contextual',
-      icon: Icons.list_alt,
-      destination: Scene7(),
-    ),
-    NavigationItem(
-      title: 'Checkbox Component',
-      description: 'Componentes de checkbox personalizáveis',
-      icon: Icons.check_box,
-      destination: CheckboxSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Radio Component',
-      description: 'Componentes de radio button personalizáveis',
-      icon: Icons.radio_button_checked,
-      destination: RadioSampleScreen(),
-    ),
-    NavigationItem(
-      title: 'Dropdown Component',
-      description: 'Componentes de dropdown personalizáveis',
-      icon: Icons.arrow_drop_down_circle,
-      destination: DropdownSampleScreen(),
-    ),
-  ];
+        NavigationItem(
+          title: 'Action Button',
+          description: 'Botões de ação personalizados',
+          icon: Icons.touch_app,
+          destination: ActionButtonPage(),
+        ),
+        NavigationItem(
+          title: 'Bottom Tab Bar',
+          description: 'Barra de navegação inferior',
+          icon: Icons.tab,
+          destination: BottomTabBarPage(),
+        ),
+        NavigationItem(
+          title: 'Custom Cards',
+          description: 'Cards personalizáveis e reutilizáveis',
+          icon: Icons.credit_card,
+          destination: CardSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Input Text Field',
+          description: 'Campos de entrada de texto',
+          icon: Icons.text_fields,
+          destination: InputFieldPage(),
+        ),
+        NavigationItem(
+          title: 'Linked Label',
+          description: 'Labels com links interativos',
+          icon: Icons.link,
+          destination: LinkedLabelPage(),
+        ),
+        NavigationItem(
+          title: 'Custom List',
+          description: 'Listas personalizáveis e reutilizáveis',
+          icon: Icons.list,
+          destination: ListSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Custom Banner',
+          description: 'Banners informativos e promocionais',
+          icon: Icons.campaign,
+          destination: BannerSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Tab Bar',
+          description: 'Componente de abas',
+          icon: Icons.tab_unselected,
+          destination: TabPage(),
+        ),
+        NavigationItem(
+          title: 'Notification Input',
+          description: 'Configurações de notificações personalizáveis',
+          icon: Icons.notifications_outlined,
+          destination: NotificationSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Avatar Component',
+          description: 'Avatares personalizáveis para perfis de usuário',
+          icon: Icons.account_circle,
+          destination: AvatarSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Interactive Card',
+          description: 'Card interativo com ações e design consistente',
+          icon: Icons.star,
+          destination: Scene6(),
+        ),
+        NavigationItem(
+          title: 'Checkbox Component',
+          description: 'Componentes de checkbox personalizáveis',
+          icon: Icons.check_box,
+          destination: CheckboxSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Radio Component',
+          description: 'Componentes de radio button personalizáveis',
+          icon: Icons.radio_button_checked,
+          destination: RadioSampleScreen(),
+        ),
+        NavigationItem(
+          title: 'Dropdown Component',
+          description: 'Componentes de dropdown personalizáveis',
+          icon: Icons.arrow_drop_down_circle,
+          destination: DropdownSampleScreen(),
+        ),
+      ];
 }
