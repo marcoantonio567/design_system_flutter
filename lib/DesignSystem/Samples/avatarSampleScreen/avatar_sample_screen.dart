@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Components/Avatar/custom_avatar.dart';
-import '../../Components/Avatar/avatar_config.dart';
+import '../../Components/Avatar/avatar_config.dart' as avatar_config;
+import '../../Components/Avatar/avatar_view_model.dart' as avatar_vm;
 import '../../shared/colors.dart';
 import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
@@ -17,6 +18,76 @@ class AvatarSampleScreen extends StatefulWidget {
 
 class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
   late final AvatarSampleController _controller;
+
+  // Helper: converte AvatarViewModel em Widget (CustomAvatar)
+  avatar_config.AvatarSize _mapSize(avatar_vm.AvatarSize s) {
+    switch (s) {
+      case avatar_vm.AvatarSize.small:
+        return avatar_config.AvatarSize.small;
+      case avatar_vm.AvatarSize.medium:
+        return avatar_config.AvatarSize.medium;
+      case avatar_vm.AvatarSize.large:
+        return avatar_config.AvatarSize.large;
+      case avatar_vm.AvatarSize.extraLarge:
+        return avatar_config.AvatarSize.extraLarge;
+    }
+  }
+
+  avatar_config.AvatarType _mapType(avatar_vm.AvatarType t) {
+    switch (t) {
+      case avatar_vm.AvatarType.image:
+        return avatar_config.AvatarType.image;
+      case avatar_vm.AvatarType.initials:
+        return avatar_config.AvatarType.initials;
+      case avatar_vm.AvatarType.icon:
+        return avatar_config.AvatarType.icon;
+    }
+  }
+
+  // Map enums de Config -> ViewModel (para construir o ViewModel do preview)
+  avatar_vm.AvatarSize _vmSize(avatar_config.AvatarSize s) {
+    switch (s) {
+      case avatar_config.AvatarSize.small:
+        return avatar_vm.AvatarSize.small;
+      case avatar_config.AvatarSize.medium:
+        return avatar_vm.AvatarSize.medium;
+      case avatar_config.AvatarSize.large:
+        return avatar_vm.AvatarSize.large;
+      case avatar_config.AvatarSize.extraLarge:
+        return avatar_vm.AvatarSize.extraLarge;
+    }
+  }
+
+  avatar_vm.AvatarType _vmType(avatar_config.AvatarType t) {
+    switch (t) {
+      case avatar_config.AvatarType.image:
+        return avatar_vm.AvatarType.image;
+      case avatar_config.AvatarType.initials:
+        return avatar_vm.AvatarType.initials;
+      case avatar_config.AvatarType.icon:
+        return avatar_vm.AvatarType.icon;
+    }
+  }
+
+  Widget _avatarFromViewModel(avatar_vm.AvatarViewModel vm) {
+    return CustomAvatar(
+      config: avatar_config.AvatarConfig(
+        size: _mapSize(vm.size),
+        type: _mapType(vm.type),
+        imageUrl: vm.imageUrl,
+        initials: vm.initials,
+        icon: vm.icon,
+        backgroundColor: vm.backgroundColor,
+        textColor: vm.textColor,
+        borderColor: vm.borderColor,
+        borderWidth: vm.borderWidth,
+        showBadge: vm.showBadge,
+        badgeColor: vm.badgeColor,
+        badgeWidget: vm.badgeWidget,
+      ),
+      onTap: vm.onTap,
+    );
+  }
 
   @override
   void initState() {
@@ -79,8 +150,6 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
                   _buildPreviewSection(),
                   const SizedBox(height: space2xl),
                   _buildControlsSection(),
-                  const SizedBox(height: space2xl),
-                  _buildExamplesSection(),
                 ],
               );
             },
@@ -91,14 +160,25 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
   }
 
   Widget _buildPreviewSection() {
+    final vm = avatar_vm.AvatarViewModel(
+      size: _vmSize(_controller.selectedSize),
+      type: _vmType(_controller.selectedType),
+      initials: _controller.selectedType == avatar_config.AvatarType.initials
+          ? _controller.initials
+          : null,
+      icon: _controller.selectedType == avatar_config.AvatarType.icon
+          ? _controller.selectedIcon
+          : null,
+      imageUrl: _controller.selectedType == avatar_config.AvatarType.image
+          ? AvatarSampleConstants.sampleImageUrl
+          : null,
+      showBadge: _controller.showBadge,
+      onTap: () => _showAvatarClickedMessage(),
+    );
+
     return SampleCard(
       title: AvatarSampleConstants.previewTitle,
-      child: Center(
-        child: CustomAvatar(
-          config: _controller.currentConfig,
-          onTap: () => _showAvatarClickedMessage(),
-        ),
-      ),
+      child: Center(child: _avatarFromViewModel(vm)),
     );
   }
 
@@ -112,11 +192,11 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
           _buildTypeSelector(),
           const SizedBox(height: spaceMd),
           _buildBadgeToggle(),
-          if (_controller.selectedType == AvatarType.initials) ...[
+          if (_controller.selectedType == avatar_config.AvatarType.initials) ...[
             const SizedBox(height: spaceMd),
             _buildInitialsInput(),
           ],
-          if (_controller.selectedType == AvatarType.icon) ...[
+          if (_controller.selectedType == avatar_config.AvatarType.icon) ...[
             const SizedBox(height: spaceMd),
             _buildIconSelector(),
           ],
@@ -128,8 +208,8 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
   Widget _buildSizeSelector() {
     return ControlSection(
       label: AvatarSampleConstants.sizeLabel,
-      child: ChipSelector<AvatarSize>(
-        options: AvatarSize.values,
+      child: ChipSelector<avatar_config.AvatarSize>(
+        options: avatar_config.AvatarSize.values,
         selectedValue: _controller.selectedSize,
         onChanged: _controller.setSize,
         labelBuilder: _controller.getSizeLabel,
@@ -140,8 +220,8 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
   Widget _buildTypeSelector() {
     return ControlSection(
       label: AvatarSampleConstants.typeLabel,
-      child: ChipSelector<AvatarType>(
-        options: AvatarType.values,
+      child: ChipSelector<avatar_config.AvatarType>(
+        options: avatar_config.AvatarType.values,
         selectedValue: _controller.selectedType,
         onChanged: _controller.setType,
         labelBuilder: _controller.getTypeLabel,
@@ -197,130 +277,7 @@ class _AvatarSampleScreenState extends State<AvatarSampleScreen> {
     );
   }
 
-  Widget _buildExamplesSection() {
-    return SampleCard(
-      title: AvatarSampleConstants.examplesTitle,
-      child: Column(
-        children: [
-          _buildSizeExamples(),
-          const SizedBox(height: spaceLg),
-          _buildTypeExamples(),
-          const SizedBox(height: spaceLg),
-          _buildBadgeExamples(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSizeExamples() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SectionHeader(title: AvatarSampleConstants.sizesExampleTitle),
-        const SizedBox(height: spaceMd),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: AvatarSize.values.map((size) {
-            return Column(
-              children: [
-                QuickAvatar(
-                  initials: AvatarSampleConstants.defaultInitials,
-                  size: size,
-                ),
-                const SizedBox(height: spaceXs),
-                Text(
-                   _controller.getSizeLabel(size),
-                   style: label2Regular,
-                 ),
-              ],
-            );
-          }).toList(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTypeExamples() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SectionHeader(title: AvatarSampleConstants.typesExampleTitle),
-        const SizedBox(height: spaceMd),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                QuickAvatar(
-                  imageUrl: AvatarSampleConstants.sampleImageUrl,
-                  size: AvatarSize.medium,
-                ),
-                const SizedBox(height: spaceXs),
-                Text('Imagem', style: label2Regular),
-               ],
-             ),
-             Column(
-               children: [
-                 QuickAvatar(
-                   initials: AvatarSampleConstants.defaultInitials,
-                   size: AvatarSize.medium,
-                 ),
-                 const SizedBox(height: spaceXs),
-                 Text('Iniciais', style: label2Regular),
-               ],
-             ),
-             Column(
-               children: [
-                 QuickAvatar(
-                   icon: AvatarSampleConstants.defaultIcon,
-                   size: AvatarSize.medium,
-                 ),
-                 const SizedBox(height: spaceXs),
-                 Text('Ícone', style: label2Regular),
-              ],
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildBadgeExamples() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SectionHeader(title: AvatarSampleConstants.badgeExampleTitle),
-        const SizedBox(height: spaceMd),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                QuickAvatar(
-                  initials: AvatarSampleConstants.defaultInitials,
-                  size: AvatarSize.medium,
-                  showBadge: false,
-                ),
-                const SizedBox(height: spaceXs),
-                Text('Sem Badge', style: label2Regular),
-               ],
-             ),
-             Column(
-               children: [
-                 QuickAvatar(
-                   initials: AvatarSampleConstants.defaultInitials,
-                   size: AvatarSize.medium,
-                   showBadge: true,
-                 ),
-                 const SizedBox(height: spaceXs),
-                 Text('Com Badge', style: label2Regular),
-              ],
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+  // Exemplos removidos para manter apenas o essencial
 
   void _showAvatarClickedMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
