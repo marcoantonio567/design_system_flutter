@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../Components/Banner/custom_banner.dart';
+import '../../Components/Banner/banner_view_model.dart';
 import '../../shared/colors.dart';
 import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
@@ -93,94 +94,115 @@ class _BannerSampleScreenState extends State<BannerSampleScreen> {
 
   List<Widget> _buildBannerExamples() {
     return [
-      // Banner Informativo
       if (_bannerVisibility['info']!)
-        BannerConfig.info(
-          title: 'Informação Importante',
-          subtitle: 'Esta é uma mensagem informativa para o usuário.',
-          showCloseButton: true,
-          onDismiss: () => _hideBanner('info'),
+        CustomBanner.instantiate(
+          viewModel: BannerViewModel(
+            title: 'Informação Importante',
+            subtitle: 'Esta é uma mensagem informativa para o usuário.',
+            type: BannerType.info,
+            showCloseButton: true,
+            onDismiss: () => _hideBanner('info'),
+          ),
         ),
 
-      // Banner de Sucesso
       if (_bannerVisibility['success']!)
-        BannerConfig.success(
-          title: 'Operação Realizada com Sucesso!',
-          subtitle: 'Seus dados foram salvos corretamente.',
-          actionText: 'Ver Detalhes',
-          onActionPressed: () => _showSnackBar('Detalhes visualizados'),
-          showCloseButton: true,
-          onDismiss: () => _hideBanner('success'),
+        CustomBanner.instantiate(
+          viewModel: BannerViewModel(
+            title: 'Operação Realizada com Sucesso!',
+            subtitle: 'Seus dados foram salvos corretamente.',
+            type: BannerType.success,
+            actionText: 'Ver Detalhes',
+            onActionPressed: () => _showSnackBar('Detalhes visualizados'),
+            showCloseButton: true,
+            onDismiss: () => _hideBanner('success'),
+          ),
         ),
 
-      // Banner de Aviso
       if (_bannerVisibility['warning']!)
-        BannerConfig.warning(
-          title: 'Atenção Necessária',
-          subtitle: 'Alguns campos precisam ser preenchidos antes de continuar.',
-          actionText: 'Corrigir',
-          onActionPressed: () => _showSnackBar('Redirecionando para correção'),
-          showCloseButton: true,
-          onDismiss: () => _hideBanner('warning'),
+        CustomBanner.instantiate(
+          viewModel: BannerViewModel(
+            title: 'Atenção Necessária',
+            subtitle: 'Alguns campos precisam ser preenchidos antes de continuar.',
+            type: BannerType.warning,
+            actionText: 'Corrigir',
+            onActionPressed: () => _showSnackBar('Redirecionando para correção'),
+            showCloseButton: true,
+            onDismiss: () => _hideBanner('warning'),
+          ),
         ),
 
-      // Banner de Erro
       if (_bannerVisibility['error']!)
-        BannerConfig.error(
-          title: 'Erro na Operação',
-          subtitle: 'Não foi possível completar a ação. Tente novamente.',
-          actionText: 'Tentar Novamente',
-          onActionPressed: () => _showSnackBar('Tentando novamente...'),
-          showCloseButton: true,
-          onDismiss: () => _hideBanner('error'),
+        CustomBanner.instantiate(
+          viewModel: BannerViewModel(
+            title: 'Erro na Operação',
+            subtitle: 'Não foi possível completar a ação. Tente novamente.',
+            type: BannerType.error,
+            actionText: 'Tentar Novamente',
+            onActionPressed: () => _showSnackBar('Tentando novamente...'),
+            showCloseButton: true,
+            onDismiss: () => _hideBanner('error'),
+          ),
         ),
 
-      // Banner Promocional Simples
       if (_bannerVisibility['promotional']!)
-        CustomBanner(
-          title: 'Oferta Especial!',
-          subtitle: 'Aproveite 50% de desconto em todos os produtos.',
-          type: BannerType.promotional,
-          actionText: 'Aproveitar',
-          onActionPressed: () => _showSnackBar('Oferta ativada!'),
-          showCloseButton: true,
-          onDismiss: () => _hideBanner('promotional'),
+        CustomBanner.instantiate(
+          viewModel: BannerViewModel(
+            title: 'Oferta Especial!',
+            subtitle: 'Aproveite 50% de desconto em todos os produtos.',
+            type: BannerType.promotional,
+            actionText: 'Aproveitar',
+            onActionPressed: () => _showSnackBar('Oferta ativada!'),
+            showCloseButton: true,
+            onDismiss: () => _hideBanner('promotional'),
+          ),
         ),
 
-      // Banner Promocional com Gradiente
-      BannerConfig.promotional(
-        title: 'Premium Upgrade',
-        subtitle: 'Desbloqueie recursos exclusivos agora!',
-        actionText: 'Upgrade',
-        onActionPressed: () => _showSnackBar('Upgrade iniciado'),
-        showCloseButton: true,
-        onDismiss: () => _showSnackBar('Banner fechado'),
+      // Promocional com gradiente
+      CustomBanner.instantiate(
+        viewModel: BannerViewModel(
+          title: 'Premium Upgrade',
+          subtitle: 'Desbloqueie recursos exclusivos agora!',
+          type: BannerType.promotional,
+          actionText: 'Upgrade',
+          onActionPressed: () => _showSnackBar('Upgrade iniciado'),
+          showCloseButton: true,
+          onDismiss: () => _showSnackBar('Banner fechado'),
+        ),
       ),
 
-      // Banner com Conteúdo Customizado
-      BannerConfig.info(
-        title: 'Novidades do App',
-        customContent: _buildCustomContent(),
-        actionText: 'Saiba Mais',
-        onActionPressed: () => _showSnackBar('Abrindo detalhes das novidades'),
+      // Info com conteúdo customizado
+      CustomBanner.instantiate(
+        viewModel: BannerViewModel(
+          title: 'Novidades do App',
+          type: BannerType.info,
+          actionText: 'Saiba Mais',
+          onActionPressed: () => _showSnackBar('Abrindo detalhes das novidades'),
+          customContent: _buildCustomContent(),
+        ),
       ),
 
-      // Banner Promocional Black Friday
-      BannerConfig.promotional(
-        title: 'Black Friday',
-        subtitle: 'Descontos imperdíveis até 70% OFF!',
-        actionText: 'Comprar Agora',
+      // Promocional Black Friday com gradiente
+      CustomBanner.instantiate(
+        viewModel: BannerViewModel(
+          title: 'Black Friday',
+          subtitle: 'Descontos imperdíveis até 70% OFF!',
+          type: BannerType.promotional,
+          actionText: 'Comprar Agora',
+          onActionPressed: () => _showSnackBar('Redirecionando para loja'),
+          showCloseButton: true,
+          onDismiss: () => _showSnackBar('Promoção dispensada'),
+        ),
         gradientColors: const [normalTertiaryBrandColor, lightTertiaryBrandColor],
-        onActionPressed: () => _showSnackBar('Redirecionando para loja'),
-        showCloseButton: true,
-        onDismiss: () => _showSnackBar('Promoção dispensada'),
       ),
 
-      // Banner Simples sem Ação
-      BannerConfig.warning(
-        title: 'Manutenção Programada',
-        subtitle: 'O sistema estará indisponível das 02:00 às 04:00.',
-        icon: Icons.build_outlined,
+      // Banner simples sem ação
+      CustomBanner.instantiate(
+        viewModel: BannerViewModel(
+          title: 'Manutenção Programada',
+          subtitle: 'O sistema estará indisponível das 02:00 às 04:00.',
+          type: BannerType.warning,
+          icon: Icons.build_outlined,
+        ),
       ),
     ];
   }

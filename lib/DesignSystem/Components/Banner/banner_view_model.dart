@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-
-enum BannerType { 
-  info, 
-  success, 
-  warning, 
-  error, 
-  promotional 
-}
+import 'banner_theme.dart';
 
 class BannerViewModel {
   final String title;

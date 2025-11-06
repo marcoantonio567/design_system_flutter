@@ -4,6 +4,7 @@ import '../../shared/styles.dart';
 import '../../shared/spacing.dart';
 import 'banner_theme.dart';
 import 'banner_config.dart';
+import 'banner_view_model.dart';
 
 export 'banner_theme.dart';
 export 'banner_config.dart';
@@ -31,6 +32,37 @@ class CustomBanner extends StatelessWidget {
     this.onDismiss,
     this.customContent,
   });
+
+  /// Factory que instancia o banner a partir de um BannerViewModel.
+  /// Quando o tipo é `BannerType.promotional`, retorna um `PromotionalBanner`.
+  static Widget instantiate({
+    required BannerViewModel viewModel,
+    List<Color>? gradientColors,
+  }) {
+    if (viewModel.type == BannerType.promotional) {
+      return PromotionalBanner(
+        title: viewModel.title,
+        subtitle: viewModel.subtitle,
+        actionText: viewModel.actionText,
+        onActionPressed: viewModel.onActionPressed,
+        showCloseButton: viewModel.showCloseButton,
+        onDismiss: viewModel.onDismiss,
+        gradientColors: gradientColors,
+      );
+    }
+
+    return CustomBanner(
+      title: viewModel.title,
+      subtitle: viewModel.subtitle,
+      type: viewModel.type,
+      icon: viewModel.icon,
+      actionText: viewModel.actionText,
+      onActionPressed: viewModel.onActionPressed,
+      showCloseButton: viewModel.showCloseButton,
+      onDismiss: viewModel.onDismiss,
+      customContent: viewModel.customContent,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
