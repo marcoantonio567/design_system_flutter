@@ -1,187 +1,112 @@
-# 🎨 Design System Flutter
+# 🎨 Flutter Design System
 
-Um sistema de design completo e reutilizável para Flutter, criado para acelerar o desenvolvimento de aplicações móveis com componentes consistentes e bem estruturados.
+A complete and reusable design system for Flutter, created to accelerate the development of mobile applications with consistent and well-structured components.
 
-## 📋 Sobre o Projeto
+## 📋 About the Project
 
-Este projeto é um **Design System** desenvolvido em Flutter que oferece um conjunto abrangente de componentes UI reutilizáveis. O objetivo é permitir que desenvolvedores criem aplicações completas utilizando apenas esses componentes pré-construídos, garantindo consistência visual e funcional em todos os projetos.
+This project is a **Design System** developed in Flutter that offers a comprehensive set of reusable UI components. The goal is to allow developers to create complete applications using only these pre-built components, ensuring visual and functional consistency across all projects.
 
-## 🤖 Desenvolvido com Context7
+## 🤖 Developed with Context7
 
-Este projeto foi desenvolvido utilizando o **Context7**, uma ferramenta avançada de IA que oferece:
+This project was developed using **Context7**, an advanced AI tool that offers:
 
-- **Documentação Inteligente**: Acesso a documentação atualizada de bibliotecas e frameworks
-- **Assistência de Código**: Suporte inteligente para desenvolvimento Flutter
-- **Melhores Práticas**: Implementação seguindo as diretrizes mais recentes do Flutter
-- **Otimização Automática**: Correções e melhorias de código automatizadas
+- **Intelligent Documentation**: Access to up-to-date documentation for libraries and frameworks
+- **Code Assistance**: Intelligent support for Flutter development
+- **Best Practices**: Implementation following the latest Flutter guidelines
+- **Automatic Optimization**: Automated code fixes and improvements
 
-O Context7 foi fundamental para garantir que este design system siga as melhores práticas do Flutter e mantenha compatibilidade com as versões mais recentes do framework.
+Context7 was fundamental in ensuring that this design system follows Flutter best practices and maintains compatibility with the latest versions of the framework.
 
-## 🏗️ Arquitetura do Código
+## 🏗️ Code Architecture
 
-O projeto segue uma arquitetura modular e bem organizada:
+The project follows a modular and well-organized architecture:
 
 ```
 lib/DesignSystem/
-├── Components/          # Componentes UI reutilizáveis
-│   ├── Avatar/         # Componente de avatar com configurações personalizáveis
-│   ├── Banner/         # Banners informativos e promocionais
-│   ├── Buttons/        # Botões de ação com diferentes estilos e tamanhos
-│   ├── Card/           # Cards flexíveis para exibição de conteúdo
-│   ├── Checkbox/       # Checkboxes customizados
-│   ├── Dropdown/       # Menus dropdown interativos
-│   ├── InputField/     # Campos de entrada de texto
-│   ├── List/           # Listas customizadas
-│   ├── Radio/          # Botões de rádio
-│   ├── Tab/            # Componentes de abas
-│   └── ...
-├── Samples/            # Telas de exemplo demonstrando uso dos componentes
-│   ├── actionButtonSampleScreen/
-│   ├── avatarSampleScreen/
-│   ├── cardSampleScreen/
-│   └── ...
-└── shared/             # Recursos compartilhados
-    ├── colors.dart     # Paleta de cores do design system
-    ├── spacing.dart    # Sistema de espaçamento
-    ├── styles.dart     # Estilos de texto e tipografia
-    ├── theme.dart      # Tema principal da aplicação
-    └── widgets/        # Widgets auxiliares
+├── Components/ # Reusable UI components
+│ ├── Avatar/ # Avatar component with customizable settings
+│ ├── Banner/ # Informative and promotional banners
+│ ├── Buttons/ # Action buttons with different styles and sizes
+│ ├── Card/ # Flexible cards for displaying content
+│ ├── Checkbox/ # Customized checkboxes
+│ ├── Dropdown/ # Interactive dropdown menus
+│ ├── InputField/ # Text input fields
+│ ├── List/ # Custom Lists
+│ ├── Radio/ # Radio buttons
+│ ├── Tab/ # Tab components
+│ └── ...
+├── Samples/ # Sample screens demonstrating component usage
+│ ├── actionButtonSampleScreen/
+│ ├── avatarSampleScreen/
+│ ├── cardSampleScreen/
+│ └── ...
+└── shared/ # Shared resources
+├── colors.dart # Design system color palette
+├── spacing.dart # Spacing system
+├── styles.dart # Text styles and Typography
+├── theme.dart # Main application theme
+└── widgets/ # Auxiliary widgets
 ```
 
-### 🔧 Princípios Arquiteturais
+### 🔧 Architectural Principles
 
-- **Modularidade**: Cada componente é independente e pode ser usado isoladamente
-- **Reutilização**: Todos os componentes são projetados para máxima reutilização
-- **Consistência**: Sistema unificado de cores, espaçamento e tipografia
-- **Flexibilidade**: Componentes configuráveis através de ViewModels e parâmetros
-- **Manutenibilidade**: Código bem estruturado e documentado
+- **Modularity**: Each component is independent and can be used in isolation
+- **Reusability**: All components are designed for maximum reuse
+- **Consistency**: Unified system of colors, spacing, and typography
+- **Flexibility**: Components configurable through ViewModels and parameters
+- **Maintainability**: Well-structured and documented code
 
-## 🧩 Componentes Disponíveis
+## 🧩 Available Components
 
-### Interface de Usuário
-- **ActionButton**: Botões com múltiplos tamanhos (small, medium, large) e estilos
-- **CustomCard**: Cards flexíveis com suporte a ícones, badges e conteúdo customizado
-- **CustomAvatar**: Avatares personalizáveis com diferentes configurações
-- **CustomBanner**: Banners informativos com temas configuráveis
+### User Interface
+- **ActionButton**: Buttons with multiple sizes (small, medium, large) and styles
+- **CustomCard**: Flexible cards with support for icons, badges, and customized content
+- **CustomAvatar**: Customizable avatars with different settings
+- **CustomBanner**: Informative banners with configurable themes
 
-### Formulários e Entrada
-- **InputField**: Campos de texto com validação e estilos customizados
-- **CustomCheckbox**: Checkboxes com design personalizado
-- **CustomRadio**: Botões de rádio estilizados
-- **CustomDropdown**: Menus dropdown com múltiplas opções
+### Forms and Input
+- **InputField**: Text fields with validation and custom styles
+- **CustomCheckbox**: Checkboxes with custom design
+- **CustomRadio**: Stylized radio buttons
+- **CustomDropdown**: Dropdown menus with multiple options
 
-### Navegação
-- **BottomTabBar**: Barra de navegação inferior
-- **NavigationCard**: Cards de navegação para menus
-- **Tab**: Sistema de abas customizável
+### Navigation
+- **BottomTabBar**: Bottom navigation bar
+- **NavigationCard**: Navigation cards for menus
+- **Tab**: Customizable tab system
 
-### Layout e Estrutura
-- **CustomList**: Listas personalizáveis
-- **SceneWidget**: Widget base para telas reutilizáveis
+### Layout and Structure
+- **CustomList**: Customizable lists
+- **SceneWidget**: Base widget for reusable screens
 
-## 🚀 Tipos de Aplicações Possíveis
+## 🚀 Possible Application Types
 
-Com este design system, você pode desenvolver diversos tipos de aplicações:
+With this design system, you can develop various types of applications:
 
-### 📱 Aplicações Comerciais
-- **E-commerce**: Lojas virtuais com catálogo de produtos, carrinho e checkout
-- **Marketplace**: Plataformas de venda com múltiplos vendedores
-- **Aplicações Bancárias**: Apps financeiros com dashboards e transações
-- **Aplicações de Delivery**: Plataformas de entrega de comida e produtos
+### 📱 Commercial Applications
+- **E-commerce**: Online stores with product catalog, shopping cart, and checkout
 
-### 🏢 Aplicações Corporativas
-- **CRM**: Sistemas de gestão de relacionamento com cliente
-- **ERP**: Sistemas de gestão empresarial
-- **Dashboards Administrativos**: Painéis de controle e analytics
-- **Aplicações de Produtividade**: Ferramentas de gestão de tarefas e projetos
+- **Marketplace**: Sales platforms with multiple vendors
+- **Banking Applications**: Financial apps with dashboards and transactions
+- **Delivery Applications**: Food and product delivery platforms
 
-### 🎯 Aplicações Sociais
-- **Redes Sociais**: Plataformas de interação social
-- **Aplicações de Mensagens**: Chats e comunicação
-- **Fóruns e Comunidades**: Plataformas de discussão
-- **Aplicações de Dating**: Apps de relacionamento
+### 🏢 Corporate Applications
+- **CRM**: Customer relationship management systems
+- **ERP**: Enterprise resource planning systems
+- **Administrative Dashboards**: Control panels and analytics
+- **Productivity Applications**: Task and project management tools
 
-### 📚 Aplicações Educacionais
-- **Plataformas de E-learning**: Cursos online e educação
-- **Aplicações de Quiz**: Jogos educativos e avaliações
-- **Bibliotecas Digitais**: Acesso a conteúdo educacional
+### 🎯 Social Applications
+- **Social Networks**: Social interaction platforms
+- **Messaging Applications**: Chats and communication
+- **Forums and Communities**: Discussion platforms
+- **Dating Applications**: Relationship apps
 
-### 🏥 Aplicações de Saúde
-- **Telemedicina**: Consultas médicas remotas
-- **Fitness e Wellness**: Apps de exercícios e bem-estar
-- **Gestão de Saúde**: Acompanhamento médico e medicamentos
+### 📚 Educational Applications
+- **E-learning Platforms**: Online courses and education
+- **Quiz Applications**: Educational games and reviews
+- **Digital Libraries**: Access to educational content
 
-## 🎨 Design System de Referência
-
-**Link do Design System Original**: 
-```
-https://www.figma.com/design/h62ZI8lMO7SsZVr2QZuVjA/Design-System--Community-?node-id=4-6&p=f&t=VHqQDjzTGV7NybJF-0
-```
-
-*Este espaço está reservado para o link do design system que serviu como base para este projeto.*
-
-## 🛠️ Como Usar
-
-### Instalação
-1. Clone o repositório
-2. Execute `flutter pub get` para instalar as dependências
-3. Execute `flutter run` para ver os exemplos
-
-### Importação de Componentes
-```dart
-// Importação individual
-import 'DesignSystem/Components/Buttons/ActionButton/action_button.dart';
-
-// Importação via index (recomendado)
-import 'DesignSystem/shared/index.dart';
-```
-
-### Exemplo de Uso
-```dart
-// Usando um ActionButton
-ActionButton.instantiate(
-  viewModel: ActionButtonViewModel(
-    text: 'Clique aqui',
-    size: ActionButtonSize.large,
-    type: ActionButtonType.primary,
-    onPressed: () => print('Botão pressionado!'),
-  ),
-)
-
-// Usando um CustomCard
-CustomCard(
-  type: CardType.primary,
-  size: CardSize.medium,
-  title: 'Título do Card',
-  subtitle: 'Subtítulo',
-  description: 'Descrição detalhada do conteúdo',
-  icon: Icons.star,
-  onTap: () => print('Card tocado!'),
-)
-```
-
-## 🎯 Telas de Exemplo
-
-O projeto inclui telas de exemplo para cada componente, demonstrando:
-- Diferentes configurações e estados
-- Casos de uso práticos
-- Melhores práticas de implementação
-- Integração entre componentes
-
-Acesse as telas através do menu principal da aplicação para explorar todos os componentes disponíveis.
-
-## 🤝 Contribuição
-
-Este design system está em constante evolução. Contribuições são bem-vindas para:
-- Novos componentes
-- Melhorias nos existentes
-- Correções de bugs
-- Documentação adicional
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
----
-
-**Desenvolvido com 😡☕ usando Flutter e Context7**
+### 🏥 Health Applications
+- **Telemedicine**: Remote medical consultations
+- **Fitness and Wellness**: Apps for and
